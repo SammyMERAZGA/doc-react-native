@@ -2,6 +2,16 @@
 
 Cette page vous explique les logiciels, dépendances et outils qu'il faut avoir avant de développer sur le projet.
 
+## Git
+
+Pour faire simple, Git est ce qui va nous permettre de travailler à plusieurs sur un même projet.
+
+### Installation de Git
+
+Rendez-vous sur le site officiel de Git et suivez les instructions.
+
+Le site : https://git-scm.com/
+
 ## NodeJS (via NVM)
 
 NVM (Node Version Manager) est un outil qui va permettre de changer de versions de Node de façon simple et rapide.
@@ -10,7 +20,9 @@ NVM (Node Version Manager) est un outil qui va permettre de changer de versions 
 
 Pour faire simple et rapide, NodeJS est un moteur qui permet d'exécuter le langage JavaScript côté serveur. Ici, il nous sera utile uniquement pour lancer notre serveur et gérer les dépendances
 
-**Installation de NVM**
+## Installation de NVM
+
+### Mac/Linux
 
 ```
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.5/install.sh | bash
@@ -42,3 +54,13 @@ nvm install 16.18.0
 ```
 nvm use 16.18.0
 ```
+
+### Windows
+
+Aller sur le lien Github suivant et cliquez sur "Download Now!" dans la documentation en bas du code source.
+
+Le lien : https://github.com/coreybutler/nvm-windows
+
+Ensuite, télécharger le ficher .exe (présent sur l'image ci-dessous) et suivez les instructions de l'exécutable afin d'avoir NVM.
+
+!["./assets/logo.png"](assets/windows-nvm.png)
