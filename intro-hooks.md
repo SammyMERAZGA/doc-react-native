@@ -11,7 +11,3 @@ L'état (ou state) dans React Native représente les données qui peuvent change
 **Pourquoi utiliser la gestion d'État ?**
 
 L'utilisation de l'état permet de créer des composants dynamiques qui réagissent aux actions de l'utilisateur. Cela rend votre application interactive en permettant aux composants de se mettre à jour automatiquement lorsque l'état change. Par exemple, un compteur qui s'incrémente lorsque vous appuyez sur un bouton.
-
-**Pour commencer nous allons débuter avec l'utilisation de state**
-
-Pour débuter l'utilisation des states et la compréhension ,veuillez passer à la page suivante qui concerne les states.
