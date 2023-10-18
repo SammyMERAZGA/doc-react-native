@@ -17,9 +17,11 @@ npm install @reduxjs/toolkit
 ```
 
 ## Concepts clés de Redux
-### Store: Le "magasin" global qui contient l'état de votre application.
+### Store
+Le "magasin" global qui contient l'état de votre application.
 
 ### Actions (Les Demandes)
+Pensez aux actions comme à des instructions que vous donnez pour modifier le store.
 Explication:
 Les actions sont des paquets d'informations que vous souhaitez envoyer au store. Ils doivent toujours avoir une propriété type pour indiquer le type d'action à effectuer.
 
@@ -55,7 +57,8 @@ function counterReducer(state = initialState, action) {
 }
 ```
 
-Middleware: Un moyen d'intercepter les actions avant qu'elles n'atteignent le réducteur.
+### Middleware
+Un moyen d'intercepter les actions avant qu'elles n'atteignent le réducteur. Middleware offre une manière de traiter les actions avant qu'elles soient envoyées au reducer. C'est utile pour la logique asynchrone ou pour logger les actions, par exemple.
 
 ## Configuration de base
 Créer un réducteur
@@ -93,6 +96,7 @@ Explication:
 Pour que vos composants React Native interagissent avec le store, vous les enveloppez avec le composant Provider de react-redux.
 
 Exemple:
+Création d'un store pour une application de compteur :
 
 ```javascript
 import { Provider } from 'react-redux';
@@ -108,7 +112,7 @@ function App() {
 
 ## Interaction avec le Store depuis un composant
 Explication:
-Les composants peuvent récupérer des données du store et envoyer des actions pour modifier l'état du store.
+Les composants peuvent récupérer des données du store et envoyer des actions pour modifier l'état du store. useDispatch et useSelector sont des hooks de react-redux qui facilitent l'interaction avec le store dans les composants fonctionnels.
 
 Exemple:
 
@@ -137,9 +141,13 @@ Planifiez la structure de votre état à l'avance. Cela facilite la gestion de l
 Si vous trouvez Redux compliqué, envisagez d'utiliser Redux Toolkit pour simplifier la logique et réduire le code.
 
 ## Ressources supplémentaires
-Documentation officielle de Redux
-Redux Toolkit
-React-Redux hooks
+Documentation officielle de Redux : https://redux.js.org/
+
+Redux Toolkit : https://redux-toolkit.js.org/
+
+React-Redux hooks : https://react-redux.js.org/api/hooks
+
 Cours et tutoriels en ligne sur Redux et React Native.
-Conclusion
+
+## Conclusion
 Redux est un outil puissant pour gérer l'état de votre application React Native. Bien qu'il ait une courbe d'apprentissage initiale, il offre une prévisibilité et une maintenabilité qui peuvent s'avérer inestimables à mesure que votre application grandit. Commencez petit, familiarisez-vous avec les concepts et évoluez à partir de là. Bon développement!
