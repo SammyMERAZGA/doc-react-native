@@ -18,4 +18,5 @@ const MonComposant = () => {
 
 ```
 setMaVariable('nouvelle valeur');
+
 ```
