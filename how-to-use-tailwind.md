@@ -2,24 +2,25 @@
 
 ## Utilisation dans vos composants React Native
 
-```
-import React from 'react';
-import { View, Text } from 'react-native';
-import tailwind from 'tailwind-rn';
+Pour utiliser tailwind dans vos composants , il faut d'abord l'importer dans votre fichier du composant
 
-const App = () => {
-  return (
-    <View style={tailwind('h-full justify-center items-center')}>
-      <Text style={tailwind('text-xl text-blue-500')}>Bonjour, React Native avec Tailwind!</Text>
-    </View>
-  );
-};
-export default App;
+```
+import tw from "tailwind-react-native-classnames";
+
 ```
 
 ## Exemple 1
 
-Si vous avez déjà un projet basé sur Node.js
+Voici un exemple d'utilisation de Tailwind dans un composant.
+Dans cette exemple nous avons mis une balise style dans le composant comme vous pouvez le voir en dessous.
+
+Ensuite nous avons personnaliser le style.
+Comme par exemple mettre du padding avec p- et le padding que vous souhaitez
+
+ou bien une couleur de fond avec bg- la couleur et la graduation de la couleur.
+Mais pour plus de détail sur l'annotation pour le style regarder la documentation de tailwind
+
+https://tailwindcss.com/
 
 ```
 import { FlatList } from "react-native";
@@ -48,66 +49,3 @@ export default NavOptions;
 ```
 
 !["./assets/IMG_1444.jpeg"](assets/IMG_1444.jpeg)
-
-## Exemple 2
-
-Exemple de composant stylisé avec tailwind
-
-```
-import { FlatList } from "react-native";
-import React from "react";
-import tw from "tailwind-react-native-classnames";
-
-
-const NavOptions = () => {
-  return (
-    <FlatList
-      data={data}
-      horizontal
-      keyExtractor={(item) => item.id}
-      renderItem={({ item }) => (
-        <TouchableOpacity
-          style={tw`p-2 pl-6 pb-8 pt-4 bg-blue-200 m-2 w-40`}
-        >
-        </TouchableOpacity>
-      )}
-    />
-  );
-};
-
-export default NavOptions;
-```
-
-!["./assets/IMG_1445.jpeg"](assets/IMG_1445.jpeg)
-
-## Exemple 3
-
-À partir de votre fichier de configuration Tailwind, générez un fichier de styles pour React Native:
-
-```
-import { FlatList } from "react-native";
-import React from "react";
-import tw from "tailwind-react-native-classnames";
-
-
-const NavOptions = () => {
-  return (
-    <FlatList
-      data={data}
-      horizontal
-      keyExtractor={(item) => item.id}
-      renderItem={({ item }) => (
-        <TouchableOpacity
-          style={tw`p-2 pl-6 pb-8 pt-4 bg-red-400 m-2 w-40`}
-        >
-        </TouchableOpacity>
-      )}
-    />
-  );
-};
-
-export default NavOptions;
-
-```
-
-!["./assets/IMG_1446.jpeg)"](assets/IMG_1446.jpeg)

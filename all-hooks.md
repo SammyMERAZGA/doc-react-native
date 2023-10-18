@@ -4,6 +4,20 @@
 
 Les hooks sont des fonctions spéciales qui permettent aux composants fonctionnels de React Native d'accéder à l'état et à d'autres fonctionnalités auparavant réservées aux composants de classe.
 
+### Les differents Hooks
+
+**_useEffect_** :
+Le hook useEffect permet de gérer les effets secondaires dans un composant fonctionnel. Il est utilisé pour exécuter du code après le rendu initial du composant ou après chaque mise à jour de l'état ou des props.
+
+**_useContext_** :
+Le hook useContext permet d'accéder au contexte d'une application React. Les contextes sont utilisés pour partager des données entre plusieurs composants sans avoir à les transmettre manuellement via les props.
+
+**_useRef_** :
+Le hook useRef permet de créer des références à des éléments DOM ou à des valeurs persistantes qui ne provoquent pas de nouvelle rendu lorsque leur valeur change. Il est souvent utilisé pour accéder aux éléments DOM directement.
+
+**_useCallback_** et **_useMemo_** :
+useCallback renvoie une fonction mémorisée, tandis que useMemo renvoie une valeur mémorisée. Ils sont utilisés pour optimiser les performances en évitant le recalcul inutile de valeurs calculées ou en évitant de recréer des fonctions lors de chaque rendu.
+
 **Exemple d'Utilisation de useEffect**
 
 ```
