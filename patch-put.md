@@ -21,19 +21,35 @@ import { useEffect, useState } from "react";
 **Exemple de code pour modifier des données depuis une API en ligne**
 
 C'est la même chose pour l'utilisation de PUT et de PATCH.
+
 PUT est normalement utilisé pour modifier les données complète.
+
 PATCH est normalement utilisé pour modifier un champ en particulier.
+
+
+L'URL de l'API n'est pas à mettre en claire dans votre code.
+
+Pour l'utiliser nous la stockerons dans un fichier .env
+
+Pour y faire appel nous utiliserons @env;
+
+Importation de des variables avec @env
+
+```
+import { API_URL } from "@env";
+```
 
 ```
 export default function NomFichier(){
 
   const [nomVar1, setNomVar1] = useState(null) // champ modifier via un TextInput
   const [nomVar2, setNomVar2] = useState(null) // champ modifier via un TextInput
+  const [id, setId] = useState(null) // id de ce qu'on modifie
 
   // création de la fonction
   const nomDeFonction = async () => {
     try{
-      const response = await axios.put("https://jsonplaceholder.typicode.com/posts", 
+      const response = await axios.put(`${API_URL}/suite-url/${id}`,
         {
           exp1: nomVar1,
           exp2: nomVar2

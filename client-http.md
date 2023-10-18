@@ -1,6 +1,6 @@
-# Comment utiliser les données côté back-end
+# Comment communiquer avec L'API
 
-Pour notre projet, surtout côté front de l'application mobile, nous utiliserons axios pour utiliser l'API créé en back-end.
+Pour notre projet, surtout côté front de l'application mobile, nous utiliserons axios pour communiquer avec l'API.
 
 ## Axios
 

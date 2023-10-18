@@ -20,6 +20,18 @@ import { useEffect, useState } from "react";
 
 **Exemple de code pour ajouter des données depuis une API en ligne**
 
+L'URL de l'API n'est pas à mettre en claire dans votre code.
+
+Pour l'utiliser nous la stockerons dans un fichier .env
+
+Pour y faire appel nous utiliserons @env;
+
+Importation de des variables avec @env
+
+```
+import { API_URL } from "@env";
+```
+
 ```
 export default function NomFichier(){
 
@@ -29,7 +41,7 @@ export default function NomFichier(){
   // création de la fonction
   const nomDeFonction = async () => {
     try{
-      const response = await axios.post("https://jsonplaceholder.typicode.com/posts", 
+      const response = await axios.post(`${API_URL}/suite-url/`, 
         {
           exp1: nomVar1,
           exp2: nomVar2
