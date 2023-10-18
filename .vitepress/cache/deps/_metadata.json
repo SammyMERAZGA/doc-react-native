@@ -5,11 +5,7 @@
     "vue": {
       "src": "../../../node_modules/vue/dist/vue.runtime.esm-bundler.js",
       "file": "vue.js",
-<<<<<<< HEAD
       "fileHash": "a76fddfe",
-=======
-      "fileHash": "b79a6f5d",
->>>>>>> Router
       "needsInterop": false
     },
     "vitepress > @vue/devtools-api": {
@@ -21,11 +17,7 @@
     "@theme/index": {
       "src": "../../../node_modules/vitepress/dist/client/theme-default/index.js",
       "file": "@theme_index.js",
-<<<<<<< HEAD
       "fileHash": "ad02249d",
-=======
-      "fileHash": "652102c3",
->>>>>>> Router
       "needsInterop": false
     }
   },
