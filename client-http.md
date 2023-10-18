@@ -8,7 +8,7 @@ Axios est un client HTTP basé sur les promesses compatible avec node.js et les 
 
 **Installation de Axios**
 
-Avec NPM
+Avec NPM 
 ```
 $ npm install axios
 ```
