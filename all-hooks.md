@@ -43,6 +43,7 @@ function Horloge() {
     </View>
   );
 }
+
 ```
 
 **Exemple d'Utilisation de useContext**
@@ -59,6 +60,7 @@ function ThemedText() {
 
   return <Text style={{ color: theme === 'dark' ? 'white' : 'black' }}>Thème : {theme}</Text>;
 }
+
 ```
 
 **Conclusion**

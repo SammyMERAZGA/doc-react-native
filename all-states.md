@@ -12,6 +12,7 @@ import { useState } from 'react';
 const MonComposant = () => {
     const [maVariable, setMaVariable] = useState('valeur initiale');
 }
+
 ```
 
 **Comment modifier la valeur du state** :
