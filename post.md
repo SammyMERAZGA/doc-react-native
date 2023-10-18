@@ -30,6 +30,7 @@ Importation de des variables avec @env
 
 ```
 import { API_URL } from "@env";
+
 ```
 
 ```
@@ -41,7 +42,7 @@ export default function NomFichier(){
   // création de la fonction
   const nomDeFonction = async () => {
     try{
-      const response = await axios.post(`${API_URL}/suite-url/`, 
+      const response = await axios.post(`${API_URL}/suite-url/`,
         {
           exp1: nomVar1,
           exp2: nomVar2

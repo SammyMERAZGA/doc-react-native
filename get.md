@@ -10,12 +10,14 @@ Nous utiliserons les useState, useEffect pour stocker les données récupérés.
 
 ```
 import axios from “axios”;
+
 ```
 
 **Importation de useEffect et useState**
 
 ```
 import { useEffect, useState } from "react";
+
 ```
 
 **Exemple de code pour récupérer des données depuis une API en ligne**
@@ -30,6 +32,7 @@ Importation de des variables avec @env
 
 ```
 import { API_URL } from "@env";
+
 ```
 
 ```
@@ -54,4 +57,5 @@ export default function NomFichier(){
     nomDeFonction()
   }, []);
 }
+
 ```
