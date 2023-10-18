@@ -1,19 +1,19 @@
 # Préparation de l'environnement pour Tailwind
 
-Tailwind CSS est un framework CSS basé sur des classes utilitaires qui permettent de créer rapidement des designs personnalisés directement dans votre HTML.
+Tailwind CSS est un framework CSS qui se base sur des classes utilitaires qui permettent de créer rapidement des designs personnalisés directement dans votre HTML.
 
-## Installation Tailwind CSS via npm ou yarn
+## Installation Tailwind CSS
 
 Si vous avez déjà un projet basé sur Node.js
 
-**NPM**
+**Npm**
 
 ```
 npm install tailwindcss
 
 ```
 
-**YARN**
+**Yarn**
 
 ```
 yarn add tailwindcss
@@ -22,7 +22,7 @@ yarn add tailwindcss
 
 ### Configuration initiale
 
-Créez un fichier de configuration tailwind.config.js:
+Créez un fichier de configuration tailwind.config.js avec la commande suivante :
 
 ```
 npx tailwindcss init
@@ -51,7 +51,3 @@ npx tailwind-rn
 ```
 
 Cela créera un fichier styles.json dans votre dossier de projet.
-
-## Utilisation dans vos composants React Native
-
-Pour voir comment utiliser tailwind dans vos composants rendez-vous dans la page suivante
