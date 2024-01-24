@@ -23,6 +23,7 @@ export default defineConfig({
           },
           { text: "Cloner le projet", link: "/clone-project" },
           { text: "Lancer le projet", link: "/start-project" },
+          { text: "Installer Insomnia", link: "/installation-insomnia" }
         ],
       },
       {
