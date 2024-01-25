@@ -32,8 +32,15 @@ import { PlayIcon } from "react-native-heroicons/outlined";
 > ```
 > **npx**
 > ```bash
-> npm i react-native-heroicons react-native-svg> 
+> npm i react-native-heroicons react-native-svg
 > ```
+
+### Etape 3 - Utiliser l'icône
+
+L'icône importée s'utilise de la manière suivante :
+```typescript
+<IconName color="red" fill="black" size={42} />;
+```
 
 ## Ajouter une icône à partir d'un SVG.
 
