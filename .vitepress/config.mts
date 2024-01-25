@@ -101,13 +101,20 @@ export default defineConfig({
         ],
       },
       {
-        text: "Tailwind CSS",
+        text: "Tailwind & CSS",
         items: [
           {
             text: "Installation & setup",
             link: "/installation-tailwind",
           },
-          { text: "Comment l'utiliser", link: "/how-to-use-tailwind" },
+          {
+            text: "Comment l'utiliser",
+            link: "/how-to-use-tailwind"
+          },
+          {
+            text: "Ajouter une icône",
+            link: "/ajouter-icone",
+          },
         ],
       },
       {
