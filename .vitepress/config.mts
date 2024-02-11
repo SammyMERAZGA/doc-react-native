@@ -115,6 +115,10 @@ export default defineConfig({
             text: "Ajouter une icône",
             link: "/ajouter-icone",
           },
+          {
+            text: "Couleurs de l'application",
+            link: "/couleurs-app"
+          }
         ],
       },
       {
