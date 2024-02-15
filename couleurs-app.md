@@ -1,7 +1,7 @@
 # Couleurs utilisées dans l'app
 
-## Structure du document
-Chaque élément sera construit selon la structure suivante:
+## Structure de la partie
+Chaque élément de couleur sera construit selon la structure suivante:
 
 - `{NomCode}`: `{CodeHexa}`
 > {Description}
@@ -113,3 +113,59 @@ Chaque élément sera construit selon la structure suivante:
 >
 > **Noms Figma**:
 > - material-theme/sys/light/outline
+
+# Styles de texte utilisés dans l'app
+
+```css
+* {
+    font-family: Saira;
+}
+```
+```css
+.little {
+    font-size: 16px;
+    font-weight: 400;
+}
+```
+```css
+p {
+    font-size: 18px;
+    font-weight: 500;
+}
+```
+```css
+strong, em {
+    font-size: 20px;
+    font-weight: 700;
+}
+```
+```css
+h5 {
+    font-size: 24px;
+    font-weight: 700;
+}
+```
+```css
+h4 {
+    font-size: 27px;
+    font-weight: 700;
+}
+```
+```css
+h3 {
+    font-size: 30px;
+    font-weight: 700;
+}
+```
+```css
+h2 {
+    font-size: 34px;
+    font-weight: 700;
+}
+```
+```css
+h1 {
+    font-size: 38px;
+    font-weight: 700;
+}
+```
