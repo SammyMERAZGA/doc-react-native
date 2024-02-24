@@ -1,27 +1,41 @@
++++
+
 # Lancer le projet
 
-Cette page vous explique comment lancer le projet sur votre ordinateur.
+Cette page vous guide sur comment démarrer le projet sur votre ordinateur, en utilisant Yarn comme gestionnaire de paquets.
 
 ## Introduction
 
-Après avoir cloné le projet sur votre ordinateur, il faut installer toutes les bibliothèques et librairies que le projet utilise ; on appelle ça les dépendances.
+Une fois le projet cloné sur votre machine, la prochaine étape est d'installer les dépendances nécessaires.
 
-**Petite explication**
+## Pourquoi Yarn ?
 
-Lorsque l'on tape sur le terminal la commande (ci-dessous) pour installer les dépendances, la commande va chercher le fichier "package.json" et notamment la partie "dependencies" afin d'installer les différentes librairies en respectant la version qui est spécifiée dans ce même fichier.
+Yarn est un gestionnaire de paquets efficace et rapide. Pour l'utiliser, assurez-vous qu'il est installé sur votre système.
+
+## Installation de Yarn
+
+```bash
+npm install --g yarn
+```
 
 ## Installation des dépendances
 
-Par défaut, nous recommandons d'utiliser Npx. Le choix final vous revient tout de même, les différences seront très minimes.
+Avec Yarn installé, ouvrez un terminal, naviguez jusqu'au dossier du projet, et exécutez :
 
-### Npx
-
-```
-npx expo start
+```bash
+yarn
 ```
 
-### Yarn
+### Lancer Expo
+
+Pour lancer le projet, exécutez :
 
 ```
 yarn expo start
 ```
+
+Un QR code s'affichera dans votre terminal. Scannez-le avec l'application Expo Go sur Android et directement sur l'appareil photo pour IOS pour voir le projet en action.
+
+## Bonus
+
+Une documentation supplémentaire a été réalisée pour résumer l'installation jusqu'au lancement du projet. Vous pouvez la consulter [ici](https://www.canva.com/design/DAF8MJ0LswE/zw_YaCEESlQ5nHOsfp_uOQ/view).
