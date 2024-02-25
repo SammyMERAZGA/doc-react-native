@@ -53,6 +53,10 @@ export default defineConfig({
             link: "/page-explanation",
           },
           {
+            text: "Utilisation de typescript",
+            link: "/typescript",
+          },
+          {
             text: "Utilisation d'i18n",
             link: "/i18n",
           },
