@@ -52,6 +52,10 @@ export default defineConfig({
             text: "Explication d'une page React",
             link: "/page-explanation",
           },
+          {
+            text: "Utilisation de typescript",
+            link: "/typescript",
+          },
         ],
       },
       {
