@@ -1,61 +1,77 @@
-# Faire une requête GET
+# Faire une requête GET avec Axios dans React Native
 
-Voici comment faire pour une requête GET avec axios dans notre Projet React Native (Expo).
+## Mise en place
 
-## Utilisation
+Pour récupérer des données depuis une API externe dans notre projet React Native, nous allons utiliser Axios, une bibliothèque promise-based pour les requêtes HTTP. Elle simplifie la tâche de communication avec les serveurs HTTP.
 
-Nous utiliserons les useState, useEffect pour stocker les données récupérés.
+### Étapes Préliminaires
 
-**Importation d'axios dans un fichier**
+1. **Installation d'Axios**
 
-```
-import axios from “axios”;
+   Assurez-vous d'abord d'avoir Axios disponible dans votre projet :
 
-```
+   ```
+   npm install axios
+   ```
 
-**Importation de useEffect et useState**
+2. **Importation d'Axios**
 
-```
-import { useEffect, useState } from "react";
+   Dans le fichier où vous souhaitez faire votre requête GET, commencez par importer Axios :
 
-```
+   ```javascript
+   import axios from "axios";
+   ```
 
-**Exemple de code pour récupérer des données depuis une API en ligne**
+3. **Utilisation de `useState` et `useEffect`**
 
-L'URL de l'API n'est pas à mettre en claire dans votre code.
+   Pour stocker les données récupérées et gérer le cycle de vie de votre composant :
 
-Pour l'utiliser nous la stockerons dans un fichier .env
+   ```javascript
+   import { useEffect, useState } from "react";
+   ```
 
-Pour y faire appel nous utiliserons @env;
+## Exemple de Requête GET
 
-Importation de des variables avec @env
+### Sécurisation de l'URL de l'API
 
-```
-import { API_URL } from "@env";
+- Pour ne pas exposer directement l'URL de votre API, stockez-la dans un fichier `.env` :
+  
+  ```
+  API_URL=votre_url_api
+  ```
 
-```
+- Importez ensuite cette URL dans votre fichier grâce à `@env` :
 
-```
-export default function NomFichier(){
+  ```javascript
+  import { API_URL } from "@env";
+  ```
 
-  const [nomVar, setNomVar] = useState(null) // création de la variable de stockage
+### Requête GET avec Axios
 
-  // création de la fonction
-  const nomDeFonction = async () => {
-    try{
-      const response = await axios.get({`${API_URL}//suite-url/`});
-      setData(response.data); // stockage des données dans une variable useState, ne pas oublier '.data'
-    }
-    catch (error) {
+Voici comment structurer votre composant pour effectuer une requête GET :
+
+```javascript
+export default function NomFichier() {
+  const [data, setData] = useState(null); // Création de la variable d'état pour stocker les données
+
+  // Fonction asynchrone pour effectuer la requête GET
+  const fetchData = async () => {
+    try {
+      // Utilisation d'Axios pour la requête, attention à bien encapsuler l'URL avec des backticks (`) si vous injectez une variable
+      const response = await axios.get(`${API_URL}/suite-url/`);
+      setData(response.data); // Stockage des données récupérées
+    } catch (error) {
       console.error("Erreur lors de la requête :", error);
     }
-  }
+  };
 
-  // appel de la fonction au lancement de la page
-
+  // Exécution de fetchData au chargement du composant
   useEffect(() => {
-    nomDeFonction()
+    fetchData();
   }, []);
-}
 
+  // Ici, vous pouvez retourner votre JSX en utilisant les données stockées dans 'data'
+}
 ```
+
+Dans cet exemple, `fetchData` est une fonction asynchrone qui utilise `axios.get` pour récupérer des données depuis une API et les stocke dans l'état local grâce à `setData`. L'utilisation de `useEffect` sans dépendances (`[]`) assure que la requête se lance au moment où le composant est monté pour la première fois.
