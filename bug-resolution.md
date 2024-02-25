@@ -34,10 +34,7 @@ Avec le bug clairement identifié et isolé, appliquez la correction nécessaire
 
 ## Étape 5 : Test Post-Correction
 
-Après avoir appliqué une correction, testez à nouveau l'application pour vous assurer que le bug est bien résolu et qu'aucune nouvelle régression n'a été introduite.
-
-- **Tests Manuels** : Reproduisez les étapes initiales qui menaient au bug pour confirmer sa résolution.
-- **Tests Automatisés** : Si possible, écrivez des tests automatisés qui couvrent le cas de bug résolu pour prévenir les régressions futures.
+Après avoir appliqué une correction, testez à nouveau l'application pour vous assurer que le bug est bien résolu et qu'aucune nouvelle régression n'a été introduite. Reproduisez les étapes initiales qui menaient au bug pour confirmer sa résolution.
 
 ## Conclusion
 
