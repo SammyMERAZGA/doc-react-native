@@ -56,6 +56,10 @@ export default defineConfig({
             text: "Utilisation de typescript",
             link: "/typescript",
           },
+          {
+            text: "Utilisation d'i18n",
+            link: "/i18n",
+          },
         ],
       },
       {
