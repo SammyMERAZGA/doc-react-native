@@ -1,56 +1,68 @@
-# Réutilisation d'un composant
+# Réutilisation d'un composant et utilisation des props
 
-Ici nous allons voir comment réutiliser un composant à plusieurs endroits différents au sein d'un projet.
+Dans React Native, la réutilisation des composants et l'utilisation des props sont des concepts fondamentaux pour construire des interfaces utilisateur dynamiques et réutilisables. Voyons cela plus en détail.
 
-##
+## Réutilisation d'un composant
 
-**Pourquoi ?**
+**Pourquoi réutiliser un composant ?**
 
-La réutilisation d'un composant en React Native est un élément essentiel car cela favorise la maintenance et la cohérence du code améliorant ainsi la productivité et la qualité de l'application.
+La réutilisation d'un composant aide à maintenir la cohérence dans l'application, facilite la maintenance du code, et améliore la productivité en évitant la redondance.
 
-**Exemple**
+**Comment réutiliser un composant ?**
 
-Pour pouvoir réutiliser le composant, comme on a pu le voir, on doit importer le composant qu'on a crée dans la page que l'on souhaite. 
+Supposons que vous avez créé un composant `MonComposant`. Pour l'utiliser dans une page, importez-le :
 
+```javascript
+import MonComposant from "./components/MonComposant";
 ```
-import MonComposant from './components/MonComposant';
-```
 
-Ensuite, si je souhaite afficher mon composant je le retourne dans ma fonction Javascript de la manière suivante : 
-```
+Puis, insérez-le dans le rendu de votre composant comme suit :
+
+```javascript
 <MonComposant />
 ```
+
 Il s'agit ici du composant qu'on a vu lors de la création d'un composant à la page précédente. De cette manière, le composant affichera le texte "Mon Composant".
 
 ## Les Props
 
-Les props en React Native sont des données que l'on peut passer d'un composant à un autre composant pour personnaliser ou configurer le comportement de ce dernier.
+Les props (ou propriétés) permettent de passer des données d'un composant parent à un composant enfant, rendant ce dernier dynamique et configurable.
 
-Imaginons que je veuille faire passer un message, je définis mon composant parent de la manière suivante : 
-```
-const ComposantParent = ({message}) => {
-  
+**Exemple d'utilisation des props**
+
+Supposons que vous ayez un composant ComposantParent qui doit afficher un message :
+
+```javascript
+const ComposantParent = ({ message }) => {
   return (
     <View>
       <Text>{message}</Text>
     </View>
-  )
-}
-```
-Ici, ma fonction va prendre en paramètre un prop "message" qu'elle va afficher dans une vue "View" en utilisant un élément de texte "Text". De cette manière, le composant est prêt à recevoir la valeur de "message" depuis n'importe quel autre composant.
-
-##
-Ensuite, pour pouvoir afficher le message que l'on souhaite dans App.js par exemple, on déclare le message de la manière suivante (ne pas oublier d'importer le composant contenant la prop "message"). On pourra afficher n'importe quel message en modifiant le texte directement ici :
-```
-const message = "Salut c'est le composant parent";
+  );
+};
 ```
 
-##
-Pour finir, on appelle le composant parent de la manière suivante afin d'afficher les données à l'interface utilisateur : 
+Dans cet exemple, message est une prop que ComposantParent attend de recevoir de son parent.
+
+Pour utiliser ComposantParent et lui passer un message, faites comme suit dans un autre composant (par exemple, App.js) :
+
+```javascript
+import React from 'react';
+import { View, Text } from 'react-native';
+import ComposantParent from './components/ComposantParent';
+
+const App = () => {
+  return (
+    <View>
+      <ComposantParent message="Salut, c'est le composant parent !" />
+    </View>
+  );
+};
+
+export default App;
 ```
-<ComposantParent message={message} />
-```
+
+Dans cet exemple, `App` passe une chaîne de caractères à `ComposantParent` via la prop `message`. `ComposantParent` utilise ensuite cette prop pour afficher le message.
+
 ## Conclusion
-
-En définitive, passer des props d'un composant à un autre est une pratique clé dans le développement React Native, car elle favorise la modularité, la réutilisation de code et permet de créer des interfaces utilisateur dynamiques et configurables.
-
+L'utilisation des props est essentielle pour construire des composants personnalisables et réutilisables en React Native. Elle permet aux composants de recevoir et d'afficher des données dynamiques, facilitant ainsi la création d'interfaces utilisateur complexes et interactives.
