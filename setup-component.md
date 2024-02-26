@@ -16,7 +16,7 @@ que chaque composant peut être réutiliser au sein d'un projet et imbriquer ave
 
 **Exemple et explication d'un composant**
 
-```
+```typescript
 import { View, Text } from 'react-native'
 import React from 'react'
 
@@ -40,7 +40,7 @@ export default MonComposant
 ##
 
 En premier lieu, nous avons les imports. Ici, deux éléments essentiels de la bibliothèque React Native "View" et "Text" ainsi que l'import du module "React" pour un soucis de lisibilité, compatibilité et d'intégration.
-```
+```typescript
 import { View, Text } from 'react-native'
 import React from 'react'
 ```
@@ -48,7 +48,7 @@ import React from 'react'
 ##
 
 Deuxièmement parlons de cette partie là : 
-```
+```typescript
 // Définition de la structure des props pour le composant MonComposant
 interface MonComposantProps {
   // Aucune prop pour cet exemple
@@ -61,7 +61,7 @@ Dans cet exemple spécifique (`interface MonComposantProps {}`), l'interface `Mo
 
 Si, à l'avenir, vous souhaitez ajouter des propriétés au composant (par exemple, des données dynamiques à afficher), vous pouvez les définir à l'intérieur de cette interface. Cela peut ressembler à ceci :
 
-```
+```typescript
 interface MonComposantProps {
   message: string;
   isActive: boolean;
@@ -74,7 +74,7 @@ Ainsi, le composant `MonComposant` pourrait accepter des propriétés comme `mes
 ##
 
 Dernièrement, nous entrons dans le corps du composant. Ici, nous définissons la fonction qui représente notre composant. Observons de plus près cette déclaration :
-```
+```typescript
 const MonComposant: React.FC<MonComposantProps> = () => {
   // Contenu du composant
   return (
@@ -103,7 +103,7 @@ En résumé, cette partie du code définit la fonction principale du composant. 
 ##
 
 Enfin, pour pouvoir réutiliser le composant ailleurs dans l'application on exporte le composant de la manière ci-dessous.
-```
+```typescript
 export default MonComposant
 ```
 
