@@ -20,12 +20,12 @@ que chaque composant peut être réutiliser au sein d'un projet et imbriquer ave
 import { View, Text } from 'react-native'
 import React from 'react'
 
-const MonComposant = () => {
+const MonComposant: React.FC = () => {
   return (
     <View>
       <Text>Mon Composant</Text>
     </View>
-  )
+  );
 }
 
 export default MonComposant
@@ -43,12 +43,12 @@ import React from 'react'
 
 Dans un deuxième temps, nous avons le corps du composant. Il s'agit là d'une fonction Javascript qui retourne une structure d'interface utilisateur, constituée ici d'une vue ("View") contenant du texte ("Text").
 ```
-const MonComposant = () => {
+const MonComposant: React.FC = () => {
   return (
     <View>
       <Text>Mon Composant</Text>
     </View>
-  )
+  );
 }
 ```
 
