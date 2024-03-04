@@ -24,12 +24,8 @@ import { PlayIcon } from "react-native-heroicons/outlined";
 ```
 
 > **En cas d'erreur lors de l'import**
-> Vous n'avez qu'à installer la librairie grâce aux commades npx ou yarn suivantes:
+> Vous n'avez qu'à installer la librairie grâce aux commades npx suivantes:
 > 
-> **yarn**
-> ```bash
-> yarn add react-native-heroicons react-native-svg
-> ```
 > **npx**
 > ```bash
 > npm i react-native-heroicons react-native-svg

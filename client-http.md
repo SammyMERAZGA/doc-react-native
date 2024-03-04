@@ -14,10 +14,3 @@ Avec NPM
 $ npm install axios
 
 ```
-
-Avec yarn
-
-```
-$ yarn add axios
-
-```

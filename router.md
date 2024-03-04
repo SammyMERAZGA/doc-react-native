@@ -13,9 +13,3 @@ Le router est utilisé pour gérer la navigation entre les différents écrans a
 ```
 npm install @react-navigation/native
 ```
-
-**YARN**
-
-```
-yarn add @react-navigation/native
-```
