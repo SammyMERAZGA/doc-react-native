@@ -33,18 +33,17 @@ npm install @reduxjs/toolkit
 Un réducteur est une fonction qui décide comment l'état de votre application change. Voici un exemple simple :
 
 ```javascript
-// services/SessionService.ts
+// services/session/SessionService.ts
 import axios, { AxiosRequestConfig } from "axios";
-import { Session } from "../entities";
 
 type UserId = number;
 
 const apiUrl: string | undefined = process.env.EXPO_PUBLIC_API_URL;
 
-export default async function SessionService(
+export default async function getAllSessionFavoriteByUserId(
   userId: UserId,
   token: string
-): Promise<Session[]> {
+): Promise<any[]> {
   try {
     const config: AxiosRequestConfig = {
       headers: {
@@ -56,7 +55,7 @@ export default async function SessionService(
       `${apiUrl}/api/session/favorite/${userId}`,
       config
     );
-    return response.data as Session[];
+    return response.data.data.sessionFavorites as any[];
   } catch (error) {
     console.error("Erreur lors de la requête :", error);
     throw error;
@@ -69,9 +68,8 @@ export default async function SessionService(
 Un réducteur est une fonction qui décide comment l'état de votre application change. Voici un exemple simple :
 
 ```javascript
-// stores/slices/sessionSlice.ts
+// stores/slices/session/sessionSlice.ts
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
-import axios from "axios";
 
 interface SessionState {
   sessionFavorites: any[];
@@ -80,27 +78,17 @@ interface SessionState {
 }
 
 const initialState: SessionState = {
-  sessionFavorites: [],
+  sessionFavorites: [], // la variables qui stock les données de récupérer via l'API ne pas oublier de typer avec une entité, si l'entité n'exsite pas créer l'entité
   loading: false,
   error: null,
 };
 
 export const fetchSessionFavorites = createAsyncThunk(
   "session/fetchSessionFavorites",
-  async (userId: number) => {
-    const apiUrl: string | any = process.env.EXPO_PUBLIC_API_URL;
-
-    try {
-      const api = axios.create({
-        baseURL: apiUrl,
-      });
-
-      const response = await api.get(`/api/session/favorite/${userId}`);
-      console.log(response);
-      return response.data;
-    } catch (error) {
-      throw error;
-    }
+  async (params: { userId: number, token: string }) => {
+    // mettre les paramètres attendus de cette manière
+    const response: any = await getSessionService(params.userId, params.token); // faire appel à la fonction créé précédement dans le fichier service
+    return response; // retourner les données attendues  (vérifier avec un console.log() quand on test sur sur une page)
   }
 );
 
@@ -134,36 +122,6 @@ export const selectAllSessionFavorites = (state: any) =>
   state.session.sessionFavorites;
 ```
 
-### Vérifier si la fonction marche
-
-Essayer d'afficher les données sur notre console en appelant la fonction dans une vue.
-
-Ne pas oublier les imports et d'utiliser la fonction dans un bouton par exemple.
-
-```javascript
-// stores/slices/sessionSlice.ts
-const [sessionFavorites, setSessionFavorites] = useState<any[]>([]);
-
-  const handleButtonClick = async () => {
-    try {
-      const favorites = await SessionService(
-        2,
-        "VOTRE_TOKEN"
-      );
-      setSessionFavorites(favorites);
-    } catch (error) {
-      console.error(
-        "Erreur lors de la récupération des favoris de session :",
-        error
-      );
-    }
-  };
-
-  useEffect(() => {
-    console.log("Nouvelles données de sessionFavorites:", sessionFavorites);
-  }, [sessionFavorites]);
-```
-
 ### Configurer le Store
 
 Le store est l'endroit où vous stockez l'état de votre application. Utilisons notre réducteur pour créer le store :
@@ -171,6 +129,7 @@ Le store est l'endroit où vous stockez l'état de votre application. Utilisons 
 Avec Redux Toolkit :
 
 ```javascript
+// stores/store.ts
 import { configureStore } from "@reduxjs/toolkit";
 // SLICES
 import navReducer from "./slices/navSlice";
@@ -184,6 +143,31 @@ export const store = configureStore({
     session: sessionReducer,
   },
 });
+```
+
+(PS Fabien le demi-boss)
+
+### Vérifier si la fonction marche
+
+Essayer d'afficher les données sur notre console en appelant la fonction dans une vue.
+
+Ne pas oublier les imports et d'utiliser la fonction dans un bouton par exemple.
+
+```javascript
+// screens/Home/Home.tsx
+  const dispatch = useDispatch<any>();
+  const sessions = useSelector(selectAllSessionFavorites);
+  const [sessionFavorites, setSessionFavorites] = useState<any[]>([]);
+
+  const handleButtonClick = async () => {
+    dispatch(fetchSessionFavorites({"userId": 2/*2 est un exemple*/, "token": "VOTRE_TOKEN"}));
+    setSessionFavorites(sessions)
+    console.log(sessions)
+  };
+
+  useEffect(() => {
+    console.log("Nouvelles données de sessionFavorites:", sessionFavorites);
+  }, [sessionFavorites]);
 ```
 
 ## Connecter Redux à React Native
